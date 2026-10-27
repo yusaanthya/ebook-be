@@ -10,6 +10,9 @@
 ## Key Features
 
 ## Live Demo
+
+Use Node.js **24.22.1** from `.nvmrc` (`nvm install && nvm use`). This pins the runtime used during verification and includes the October 2026 Node.js security fixes. Run `npm ci` to install the audited dependency lockfile. A version file does not automatically switch an already-running server, CI job, or container.
+
  To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) and [ReactJS](https://github.com/facebook/react/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
   
 
