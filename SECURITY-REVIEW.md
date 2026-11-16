@@ -49,3 +49,9 @@ These application issues remain unchanged in this dependency-first pass. Their s
 ## Runtime verification
 
 The local runtime is Node.js 24.22.1, the patched 24.x release in the October 21, 2026 security bulletin: https://nodejs.org/en/blog/vulnerability/october-2026-security-releases. The repository now records it in .nvmrc. This file does not automatically switch a running process or guarantee that CI, containers, or another machine use the same version. The application-level findings above remain unresolved.
+
+## November 17, 2026 security refresh
+
+Node.js is now pinned to 24.22.3, covering the November 11 security release: https://nodejs.org/en/blog/vulnerability/november-2026-security-releases/. Verification used the official SHA256-verified Node.js 24.22.3 binary in an isolated worktree. The historical October results above remain a snapshot.
+
+The current lock audits with zero known vulnerabilities. Nodemon remains 3.1.14; its minimatch dependency is scoped to the patched 11.x line with an npm override because Nodemon still declares vulnerable minimatch 10.x. This avoids the audit tool's proposed Nodemon downgrade. Nodemon's own watcher matcher passes an include/exclude smoke check with minimatch 11. bcrypt and argon2 hash/verify round trips pass. Database and authenticated application flows remain unverified.
